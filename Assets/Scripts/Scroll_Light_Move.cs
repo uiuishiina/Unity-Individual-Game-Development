@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
@@ -25,7 +24,14 @@ public class Scroll_Light_Move : MonoBehaviour
         Light2D.intensity = 1;
         Light2D.shapeLightFalloffSize = 2;
     }
-
+    public void BombLight()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        Light2D = transform.GetChild(0).GetComponent<Light2D>();
+        Light2D.intensity = 1;
+        Light2D.shapeLightFalloffSize = 2;
+        StartCoroutine(dertorylight(time_));
+    }
     public void SetFunc(Action action)
     {
         Ondestroy = action;
