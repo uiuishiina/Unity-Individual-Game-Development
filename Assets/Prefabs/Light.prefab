@@ -177,7 +177,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -196,7 +196,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   time_: 2
-  maxRadius: 20
+  maxRadius: 10
 --- !u!50 &9162072830254264068
 Rigidbody2D:
   serializedVersion: 5

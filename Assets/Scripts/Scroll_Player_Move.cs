@@ -5,6 +5,7 @@ public class Scroll_Player_Move : MonoBehaviour
 {
     [SerializeField, Header("移動スピード")] private float MoveSpeed = 1;
     [SerializeField, Header("ジャンプ力")] private float JumpPower = 1;
+    Vector3 startpos;
     PlayerInput playerInput;
     Rigidbody2D rb;
     bool IsJump = false;
@@ -12,6 +13,7 @@ public class Scroll_Player_Move : MonoBehaviour
     {
         playerInput = GetComponent<PlayerInput>();
         rb = GetComponent<Rigidbody2D>();
+        startpos = transform.position;
     }
 
     void Update()
@@ -34,5 +36,14 @@ public class Scroll_Player_Move : MonoBehaviour
         {
             IsJump = false;
         }
+        else if(collision.gameObject.tag == "Ded")
+        {
+            Resetpos();
+        }
+    }
+
+    void Resetpos()
+    {
+        transform.position = startpos;
     }
 }

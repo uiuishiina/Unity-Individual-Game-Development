@@ -31,7 +31,7 @@ public class Scroll_Light_Move : MonoBehaviour
         Ondestroy = action;
     }
 
-    private void OnCollisionStay2D(Collision2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if (!collition_)
         {
