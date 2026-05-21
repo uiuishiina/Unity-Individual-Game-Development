@@ -43,8 +43,16 @@ public class Scroll_Player_Move : MonoBehaviour
         }
         else if(collision.gameObject.tag == "Ded")
         {
+
             model.GetComponent<SpriteRenderer>().enabled = false;
-            Gamemanager.GetComponent<Scrool_GameManager>().PlayerMiss(Resetpos);
+            if (!Gamemanager.GetComponent<Scrool_GameManager>().is_Goal)
+            {
+                Gamemanager.GetComponent<Scrool_GameManager>().PlayerMiss(Resetpos);
+            }
+        }
+        else if(collision.gameObject.tag == "Flag")
+        {
+            startpos = collision.gameObject.GetComponent<Scrool_Flag>().restart_pos;
         }
     }
 

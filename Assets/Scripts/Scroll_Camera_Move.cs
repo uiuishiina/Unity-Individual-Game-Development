@@ -3,7 +3,8 @@ using UnityEngine;
 public class Scroll_Camera_Move : MonoBehaviour
 {
     private Camera MainCamera;
-    [SerializeField, Header("オフセット")] private Vector2 CameraOffset = new Vector2(3,5);
+    [SerializeField, Header("移動オフセット")] private Vector2 CameraOffset = new Vector2(3,5);
+    [SerializeField, Header("原点オフセット")] private Vector3 originoffset = new Vector3(-2, 0, 0);
     [SerializeField, Header("追従ターゲット")] private GameObject Target;
 
     private void Start()
@@ -16,8 +17,8 @@ public class Scroll_Camera_Move : MonoBehaviour
         var length = Target.transform.position - MainCamera.transform.position;
 
         var move_vec = new Vector3(ApplyDeadZone(length.x, CameraOffset.x), ApplyDeadZone(length.y, CameraOffset.y), 0);
-
-        if(move_vec != Vector3.zero) {
+        if (move_vec != Vector3.zero) {
+            move_vec += originoffset;
             transform.Translate(move_vec);
         }
     }

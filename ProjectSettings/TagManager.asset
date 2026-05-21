@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Floor
   - Ded
+  - Flag
   layers:
   - Default
   - TransparentFX

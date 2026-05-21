@@ -7,6 +7,7 @@ public class Scrool_GameManager : MonoBehaviour
     [SerializeField, Header("ライトプール")] Scrool_Light_Pool pool;
     [SerializeField, Header("プレイヤー")] GameObject Player;
     [SerializeField, Header("床")] GameObject[] Floor;
+    public bool is_Goal = false;
     
     void Start()
     {
@@ -35,6 +36,9 @@ public class Scrool_GameManager : MonoBehaviour
         {
             floor.GetComponent<SpriteRenderer>().enabled = false;
         }
+    }
+    public void Goal() {
+        is_Goal = true;
     }
 
     async Task Wait()
