@@ -1008,6 +1008,7 @@ MonoBehaviour:
   quizData:
   - {fileID: 11400000, guid: e81e647a5806a4b4ebc2e770578c5f0d, type: 2}
   - {fileID: 11400000, guid: 5f782664b0d614545bb7bfd47df17351, type: 2}
+  - {fileID: 11400000, guid: d3cea4a42d003284ca5e24764d6bc6f2, type: 2}
   quizPanel: {fileID: 508492793}
   quizImage: {fileID: 1777295873}
   answerInput: {fileID: 1051939371}
@@ -1018,10 +1019,10 @@ MonoBehaviour:
   highScoreText: {fileID: 364358451}
   retryButton: {fileID: 559185525}
   timer: 0
-  gameTime: 50
+  gameTime: 30
   zoom_time: 10
   quizIndex: 0
-  gameCount: 10
+  gameCount: 5
   gameScore: 0
   highScore: 0
 --- !u!4 &984937010
@@ -2016,8 +2017,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 0
