@@ -6,7 +6,7 @@ public class Player_Move : MonoBehaviour
 {
     [Header("プレイヤー移動設定")]
 
-    [SerializeField,Tooltip("移動スピード")]private float MoveSpeed = 0;
+    [Tooltip("移動スピード")] public float MoveSpeed { get; private set; } = 0;
     [SerializeField, Tooltip("最高速度")] private float MaxSpeed = 10;
     [SerializeField, Tooltip("加速度設定")] private float Acceleration = 0.5f;
     [SerializeField, Tooltip("回転速度設定")] private float Rotation = 0.5f;
@@ -16,11 +16,12 @@ public class Player_Move : MonoBehaviour
 
     [Header("その他")]
     [SerializeField, Tooltip("Body")] private GameObject Body;
+    [SerializeField, Tooltip("BodyのRigidbody")] private Rigidbody rb;
+
     [SerializeField, Tooltip("CameraTarget")] private GameObject CameraTarget;
 
     //  プレイヤー移動設定
     private PlayerInput input;
-    private Rigidbody rb;
 
     private Vector2 input_Vec;
     private float heading;
@@ -33,7 +34,6 @@ public class Player_Move : MonoBehaviour
     /// </summary>
     private void Start() {
         input = GetComponent<PlayerInput>();
-        rb = GetComponent<Rigidbody>();
     }
 
     /// <summary>
